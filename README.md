@@ -10,37 +10,45 @@ as a tool for me to track the weight I lift from week to week using my current
 routine. Other users could sign up and make their own routine to track as well.
 
 ## Write between 3-5 user stories
-- As a user, I want to sign up and sign in, so I can use the app.
-- As a user, I want to sign in, so I can save exercises and make a routine.
-- AS a user, I want to create a routine, so that I know what to do one each day in the gym.
-- AS a user, I want to save the weight I lift for each exercise and day, so that I can track my progress.
-- AS a user, I want to be able to see the weight I lifted from the week prior per exercise, so that I know how much more to lift to ensure progressive overload.
+As a user, I want to sign up, so that I can sign-in.
+As a user, I want to sign in, so I can use the app.
+As a user, I want to sign in, so I can save exercises.
+-As a user, I want to save exercises, so I can create a workout.
+AS a user, I want to create a workout, so that I know what exercises to do for each day in the gym.
+As a user, I want to save the weight I used, so that I can keep track of how much weight I'm lifting for each exercise.
+-As a user, I want to update the weight I used on an exercise, so that I know that I should lift more weight next time.
+As a user, I want to see my prior workouts and weight used, so I can keep an eye on my progress.
 
 ## Plan your tables and columns
 
 What tables will you need? What will the columns on the table be?
 
-3 tables (last week, current week, goal weight)
-columns (exercise, effort, sets, reps, weight)
-Rows (any exercise input by user)
+workout (id, name, exercise, weight, date, foreign key:user_id)
+user (id, email, password)
 
 ## Create an ERD (entity relationship diagram)
 
-(https://user-images.githubusercontent.com/19196821/28252321-a59bd870-6a5e-11e7-82ff-4781cc69d9e1.png)
+https://user-images.githubusercontent.com/19196821/28430272-df76ac40-6d4d-11e7-8ac9-7c89cf31d37c.png
 
 ## Routing
-index to GET last weeks workout data
-create to POST a table with (+5lbs to each exercise weight) for the Goal Weight table
-create to POST a table with (of user input weight) to create the stored workout data to be represented as 'Last Week' data.
+Sign-in: POST
+Sign-up: POST
+Sign-out: DELETE
+Change-pwd: PATCH
+Create workout: POST
+Update workout weight: PATCH
+Show all workouts: GET
+Show workout: GET
 
 
 ## 3rd Party APIs
 
-For now I'm keeping it simple.
+For now I'm keeping it simple. Could integrate with myFitnessPal for nutritional data or youtube for videos on form.
 
 ## Wireframes
+https://user-images.githubusercontent.com/19196821/28425448-5181d93c-6d3e-11e7-973f-f851fca2435f.png
 
-https://user-images.githubusercontent.com/19196821/28252492-f7543d26-6a61-11e7-94bd-c4705cb2586d.png
+https://user-images.githubusercontent.com/19196821/28425562-aaf6b73a-6d3e-11e7-9cfc-cc90991e107e.png
 
 ## Timetable
 
