@@ -12,46 +12,6 @@ So I'd like to create a website that would essentially act
 as a tool for me to track the weight I lift from week to week using my current
 routine. Other users could sign up and make add their own exercises and to track their exercise data as well.
 
-## Write between 3-5 user stories
-As a user, I want to sign up, so that I can sign-in.
-As a user, I want to sign in, so I can use the app.
-As a user, I want to sign in, so I can save exercises.
-As a user, I want to sign in, so I can save weight performed on exercises.
-As a user, I want to save exercises, so that I have a record of when I performed certain exercises.
-As a user, I want to save the weight I used, so that I can keep track of how much weight I'm lifting for each exercise.
-As a user, I want to see my prior workouts and weight used, so I can keep an eye on my progress
-
-## Plan your tables and columns
-
-What tables will you need? What will the columns on the table be?
-
-workout (id, name, exercise, weight, date, foreign key:user_id)
-user (id, email, password)
-
-## Create an ERD (entity relationship diagram)
-ERD diagram:
-https://user-images.githubusercontent.com/19196821/28430272-df76ac40-6d4d-11e7-8ac9-7c89cf31d37c.png
-
-
-## Routing
-API-
-Create exercise: POST; route: /exercise
-A user creates an exercise and this triggers a POST request to save the exercise to the DB
-
-Update exercise weight: PATCH; route: exercise/:id
-A user enters a new date/weight for any exercise listed in exercise history. This triggers a POST request to create a new record of the weight and updates the DB.
-
-Show exercise history: GET; route: exercise/
-A user clicks the 'show exercise history’ button and this triggers a GET request to index all of the exercises stored in the DB
-
-Delete exercise: DELETE
-A user clicks the ‘delete’ button and this triggers a DELETE request and destroys the record stored in the DB.
-
-
-## 3rd Party APIs
-
-For now I'm keeping it simple. Could integrate with myFitnessPal for nutritional data or youtube for videos on form.
-
 ## Wireframes
 https://user-images.githubusercontent.com/19196821/28425448-5181d93c-6d3e-11e7-973f-f851fca2435f.png
 
