@@ -1,4 +1,6 @@
-link to deployed app:  https://ryanwk.github.io/StrongerFrontEnd/
+link to deployed app: https://stronger.herokuapp.com/
+
+checkout the front end repo here: https://ryanwk.github.io/StrongerFrontEnd/
 ## Project Idea
 
 I am building a fitness tracker. This will primarily serve as a personal
