@@ -1,3 +1,4 @@
+link to deployed app:  https://ryanwk.github.io/StrongerFrontEnd/
 ## Project Idea
 
 I am building a fitness tracker. This will primarily serve as a personal
