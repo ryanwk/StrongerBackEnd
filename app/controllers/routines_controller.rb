@@ -30,6 +30,7 @@ class RoutinesController < OpenReadController
 
   # PATCH/PUT /routines/1
   def update
+    binding.pry
     if @routine.update(routine_params)
 
       render json: @routine
@@ -48,11 +49,11 @@ class RoutinesController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_routine
-      @routine = current_user.routines.find(params[:id])
+      @routine = current_user.routine.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def routine_params
-      params.require(:routine).permit(:name, :exercise_id)
+      params.require(:routine).permit(:name, :exercise_id, :routine_id, :user_id)
     end
 end
