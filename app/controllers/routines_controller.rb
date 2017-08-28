@@ -11,22 +11,26 @@ class RoutinesController < OpenReadController
   # GET /routines/1
   def show
     render json: Routine.find(params[:id])
+
   end
 
   # POST /routines
   def create
     @routine = current_user.routines.build(routine_params)
 
+
     if @routine.save
       render json: @routine, status: :created, location: @routine
     else
       render json: @routine.errors, status: :unprocessable_entity
+
     end
   end
 
   # PATCH/PUT /routines/1
   def update
     if @routine.update(routine_params)
+
       render json: @routine
     else
       render json: @routine.errors, status: :unprocessable_entity
@@ -43,7 +47,7 @@ class RoutinesController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_routine
-      @routine = current_user.routines.find(params[:id])
+      @routine = current_user.routines
     end
 
     # Only allow a trusted parameter "white list" through.

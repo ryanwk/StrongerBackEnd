@@ -2,4 +2,5 @@
 class User < ApplicationRecord
   include Authentication
   has_many :exercises
+  has_many :routines
 end
