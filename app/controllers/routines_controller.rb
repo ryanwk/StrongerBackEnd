@@ -1,5 +1,5 @@
 class RoutinesController < OpenReadController
-  before_action :set_routine, only: [:show, :update, :create, :destroy]
+  before_action :set_routine, only: [:show, :update, :destroy]
 
   # GET /routines
   def index
@@ -52,6 +52,6 @@ class RoutinesController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def routine_params
-      params.require(:routine).permit(:name, :date)
+      params.require(:routine).permit(:name, :date, :exercise_id)
     end
 end

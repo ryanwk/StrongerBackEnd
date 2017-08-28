@@ -10,7 +10,7 @@ curl "${API}${URL_PATH}" \
   --data '{
     "routine": {
       "name": "upperbody",
-      "date": "05-12-1992"
+      "exercise_id": "110"
     }
   }'
 
