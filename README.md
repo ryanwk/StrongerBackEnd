@@ -1,3 +1,6 @@
+link to deployed app: https://stronger.herokuapp.com/
+
+checkout the front end repo here: https://github.com/ryanwk/StrongerFrontEnd
 ## Project Idea
 
 I am building a fitness tracker. This will primarily serve as a personal
@@ -8,6 +11,7 @@ I have years of data, it's not very clean, or efficient but it beats a pen and p
 So I'd like to create a website that would essentially act
 as a tool for me to track the weight I lift from week to week using my current
 routine. Other users could sign up and make add their own exercises and to track their exercise data as well.
+
 
 ## User stories
 As a user, I want to sign up, so that I can sign-in.
@@ -46,30 +50,3 @@ A user clicks the 'show exercise history’ button and this triggers a GET reque
 
 Delete exercise: DELETE
 A user clicks the ‘delete’ button and this triggers a DELETE request and destroys the record stored in the DB.
-
-
-## 3rd Party APIs
-
-For now I'm keeping it simple. Could integrate with myFitnessPal for nutritional data or youtube for videos on form.
-
-## Wireframes
-Stronger v.1:
-https://user-images.githubusercontent.com/19196821/28425448-5181d93c-6d3e-11e7-973f-f851fca2435f.png
-
-https://user-images.githubusercontent.com/19196821/28425562-aaf6b73a-6d3e-11e7-9cfc-cc90991e107e.png
-
-Stronger v.2:
-![image](https://user-images.githubusercontent.com/19196821/29722132-a3153508-898d-11e7-9e78-e09ff1b06f1e.png)
-![image](https://user-images.githubusercontent.com/19196821/29753729-9f0d9b12-8b45-11e7-8ef3-3b23a2245267.png)
-## Timetable
-
-Two repos one from browser template and one from rails template
-Authentication stuff from tic-tac-toe to browser-template
-Spin up local grunt server and spin up local rails server
-Set up html skeleton to test user auth actions (sign-up etc)
-Create resource new table with rails migration, bin/rails generate scaffold author given_name:string family_name:string (user:references)
-In model add relationship, will have to tweak things.
-
-day 1, 2, 3: api
-day 4: api/front end
-day 5 & 6: front end and
