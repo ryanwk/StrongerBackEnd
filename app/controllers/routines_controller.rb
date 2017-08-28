@@ -1,5 +1,5 @@
-class RoutinesController < ApplicationController
-  before_action :set_routine, only: [:show, :update, :destroy]
+class RoutinesController < OpenReadController
+  before_action :set_routine, only: [:show, :update, :create, :destroy]
 
   # GET /routines
   def index
@@ -10,12 +10,12 @@ class RoutinesController < ApplicationController
 
   # GET /routines/1
   def show
-    render json: @routine
+    render json: Routine.find(params[:id])
   end
 
   # POST /routines
   def create
-    @routine = Routine.new(routine_params)
+    @routine = current_user.routines.build(routine_params)
 
     if @routine.save
       render json: @routine, status: :created, location: @routine
@@ -36,12 +36,14 @@ class RoutinesController < ApplicationController
   # DELETE /routines/1
   def destroy
     @routine.destroy
+
+    head :no_content
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_routine
-      @routine = Routine.find(params[:id])
+      @routine = current_user.routines.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
