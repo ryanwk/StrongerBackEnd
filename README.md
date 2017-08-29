@@ -1,3 +1,4 @@
+
 Link to the deployed app: https://stronger.herokuapp.com/
 
 Checkout the front-end repo here: https://github.com/ryanwk/strongerFrontEnd2
@@ -17,6 +18,7 @@ as a tool for me to track the weight I lift from week to week using my current
 routine. Other users could sign up and make their own exercises/routines and to
 track their exercise data as well. Eventually, I will find a wrapper to place
 around Ember to convert the SPA web app to a mobile app.
+
 
 ## User stories
 v.1
@@ -70,6 +72,7 @@ A user clicks the 'show exercise history’ button and this triggers a GET reque
 Delete exercise: DELETE
 A user clicks the ‘delete’ button and this triggers a DELETE request and destroys the record stored in the DB.
 
+
 Create a routine POST
 Update a routine PATCH
 Delete an routine DELETE
@@ -115,3 +118,4 @@ Get CRUD working on routine entity
 ## Technologies Used
 
 - Ruby on Rails
+
