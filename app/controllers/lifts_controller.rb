@@ -16,7 +16,7 @@ class LiftsController < ProtectedController
   # POST /lifts
   def create
     binding.pry
-    @lift = current_user.lifts.build(lift_params)
+    @lift = current_user.lifts.routines.build(lift_params)
 
     if @lift.save
       render json: @lift, status: :created, location: @lift
@@ -47,6 +47,6 @@ class LiftsController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def lift_params
-      params.require(:lift).permit(:routine_id, :exercise_id, :weight)
+      params.require(:lift).permit(:routine_id, :exercise_id, :weight, :user)
     end
 end
