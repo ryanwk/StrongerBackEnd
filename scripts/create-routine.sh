@@ -9,8 +9,7 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
     "routine": {
-      "name": "upperbody",
-      "exercise_id": "110"
+      "name": "titz"
     }
   }'
 

@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   resources :lifts
   resources :routines
-  resources :exercises, except: %i[show edit]
+  resources :exercises, except: %i[update destroy edit]
   resources :examples, except: %i[new edit]
   post '/sign-up' => 'users#signup'
   post '/sign-in' => 'users#signin'

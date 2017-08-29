@@ -1,4 +1,4 @@
-class LiftsController < ApplicationController
+class LiftsController < ProtectedController
   before_action :set_lift, only: [:show, :update, :destroy]
 
   # GET /lifts
@@ -15,7 +15,8 @@ class LiftsController < ApplicationController
 
   # POST /lifts
   def create
-    @lift = Lift.new(lift_params)
+    binding.pry
+    @lift = current_user.lifts.build(lift_params)
 
     if @lift.save
       render json: @lift, status: :created, location: @lift
