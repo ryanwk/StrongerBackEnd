@@ -1,3 +1,7 @@
+Link to the deployed app: https://stronger.herokuapp.com/
+
+Checkout the front-end repo here: https://github.com/ryanwk/strongerFrontEnd2
+
 ## Project Concept
 
 I am building a fitness tracker. This will primarily serve as a personal
@@ -12,7 +16,7 @@ So I'd like to create a website that would essentially act
 as a tool for me to track the weight I lift from week to week using my current
 routine. Other users could sign up and make their own exercises/routines and to
 track their exercise data as well. Eventually, I will find a wrapper to place
-around Ember to convert the SPA web app to a mobile app. 
+around Ember to convert the SPA web app to a mobile app.
 
 ## User stories
 v.1
@@ -107,3 +111,7 @@ Remove user_id from exercises
 Add user_id and exercise_id to routines
 Set up model to reflect new ERD
 Get CRUD working on routine entity
+
+## Technologies Used
+
+- Ruby on Rails
