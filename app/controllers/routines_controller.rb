@@ -1,4 +1,4 @@
-class RoutinesController < OpenReadController
+class RoutinesController < ProtectedController
   before_action :set_routine, only: [ :show, :update, :destroy]
 
   # GET /routines
@@ -30,9 +30,7 @@ class RoutinesController < OpenReadController
 
   # PATCH/PUT /routines/1
   def update
-    binding.pry
     if @routine.update(routine_params)
-
       render json: @routine
     else
       render json: @routine.errors, status: :unprocessable_entity
@@ -49,7 +47,7 @@ class RoutinesController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_routine
-      @routine = current_user.routine.find(params[:id])
+      @routine = current_user.routines.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
