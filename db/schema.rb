@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828185702) do
+ActiveRecord::Schema.define(version: 20170829192959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,18 +25,27 @@ ActiveRecord::Schema.define(version: 20170828185702) do
 
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
-    t.integer  "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_exercises_on_user_id", using: :btree
+  end
+
+  create_table "lifts", force: :cascade do |t|
+    t.integer  "routine_id"
+    t.integer  "exercise_id"
+    t.integer  "weight"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["exercise_id"], name: "index_lifts_on_exercise_id", using: :btree
+    t.index ["routine_id"], name: "index_lifts_on_routine_id", using: :btree
   end
 
   create_table "routines", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "exercise_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.index ["exercise_id"], name: "index_routines_on_exercise_id", using: :btree
     t.index ["user_id"], name: "index_routines_on_user_id", using: :btree
   end
 
@@ -51,6 +60,8 @@ ActiveRecord::Schema.define(version: 20170828185702) do
   end
 
   add_foreign_key "examples", "users"
-  add_foreign_key "routines", "exercises"
+  add_foreign_key "exercises", "users"
+  add_foreign_key "lifts", "exercises"
+  add_foreign_key "lifts", "routines"
   add_foreign_key "routines", "users"
 end
