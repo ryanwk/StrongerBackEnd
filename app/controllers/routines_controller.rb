@@ -52,6 +52,6 @@ class RoutinesController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def routine_params
-      params.require(:routine).permit(:name, :exercise_id, :routine_id, :user_id)
+      params.require(:routine).permit(:name, :exercise_id)
     end
 end
