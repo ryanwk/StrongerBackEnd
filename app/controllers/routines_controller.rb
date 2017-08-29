@@ -1,4 +1,4 @@
-class RoutinesController < OpenReadController
+class RoutinesController < ProtectedController
   before_action :set_routine, only: [ :show, :update, :destroy]
 
   # GET /routines
@@ -31,7 +31,6 @@ class RoutinesController < OpenReadController
   # PATCH/PUT /routines/1
   def update
     if @routine.update(routine_params)
-
       render json: @routine
     else
       render json: @routine.errors, status: :unprocessable_entity

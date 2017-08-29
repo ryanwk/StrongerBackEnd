@@ -10,7 +10,7 @@ class ExercisesController < ProtectedController
 
   # GET /exercises/1
   def show
-    render json: @exercise
+    render json: Exercise.find(params[:id])
   end
 
   # POST /exercises
@@ -46,6 +46,6 @@ class ExercisesController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def exercise_params
-      params.require(:exercise).permit( :name, :weight, :user_id)
+      params.require(:exercise).permit( :name, :weight)
     end
 end
