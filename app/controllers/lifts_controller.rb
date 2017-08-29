@@ -26,7 +26,7 @@ class LiftsController < ApplicationController
 
   # PATCH/PUT /lifts/1
   def update
-    if @lift.update(lift_params)
+    if @lift.current_user.routines.lifts.find(:id).update(lift_params)
       render json: @lift
     else
       render json: @lift.errors, status: :unprocessable_entity
