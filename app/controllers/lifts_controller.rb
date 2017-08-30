@@ -15,11 +15,10 @@ class LiftsController < ProtectedController
 
   # POST /lifts
   def create
-    binding.pry
-    @lift = current_user.lifts.routines.build(lift_params)
+    @lift = current_user.lifts.build(lift_params)
 
     if @lift.save
-      render json: @lift, status: :created, location: @lift
+      render json: @lift, status: :created
     else
       render json: @lift.errors, status: :unprocessable_entity
     end
