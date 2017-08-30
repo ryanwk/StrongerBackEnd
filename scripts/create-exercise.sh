@@ -9,7 +9,8 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=$TOKEN" \
   --data '{
     "exercise": {
-      "name": "createdViaCurl"    }
+      "name": "createdViaCurl"
+    }
   }'
 
 echo

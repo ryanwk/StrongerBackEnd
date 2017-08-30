@@ -15,11 +15,12 @@ class ExercisesController < OpenReadController
 
   # POST /exercises
   def create
-    # binding.pry
-    @exercise = Exercise.new(exercise_params)
+
+    @exercise = current_user.exercises.build(exercise_params)
 
     if @exercise.save
-      render json: @exercise, status: :created, location: @exercise
+      render json: @exercise, status: :created
+      # location: @exercise
     else
       render json: @exercise.errors, status: :unprocessable_entity
     end
