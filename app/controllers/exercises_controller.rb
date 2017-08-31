@@ -1,9 +1,9 @@
-class ExercisesController < ProtectedController
+class ExercisesController < OpenReadController
   before_action :set_exercise, only: [:show, :update, :destroy]
 
   # GET /exercises
   def index
-    @exercises = current_user.exercises
+    @exercises = Exercise.all
 
     render json: @exercises
   end
@@ -15,10 +15,12 @@ class ExercisesController < ProtectedController
 
   # POST /exercises
   def create
+
     @exercise = current_user.exercises.build(exercise_params)
 
     if @exercise.save
-      render json: @exercise, status: :created, location: @exercise
+      render json: @exercise, status: :created
+      # location: @exercise
     else
       render json: @exercise.errors, status: :unprocessable_entity
     end
@@ -46,6 +48,6 @@ class ExercisesController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def exercise_params
-      params.require(:exercise).permit( :name, :weight)
+      params.require(:exercise).permit(:name)
     end
 end

@@ -9,7 +9,7 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "exercise": {
-      "weight": "300"
+      "name": "curlScriptzz"
     }
   }'
 

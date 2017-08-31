@@ -93,6 +93,8 @@ https://user-images.githubusercontent.com/19196821/28425562-aaf6b73a-6d3e-11e7-9
 Stronger v.2:
 ![image](https://user-images.githubusercontent.com/19196821/29722132-a3153508-898d-11e7-9e78-e09ff1b06f1e.png)
 ![image](https://user-images.githubusercontent.com/19196821/29753729-9f0d9b12-8b45-11e7-8ef3-3b23a2245267.png)
+![image](https://user-images.githubusercontent.com/19196821/29844187-6970638e-8cdc-11e7-9666-a4398215a519.png)
+
 ## Timetable
 
 v.1
@@ -118,4 +120,3 @@ Get CRUD working on routine entity
 ## Technologies Used
 
 - Ruby on Rails
-
