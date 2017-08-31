@@ -48,6 +48,6 @@ class ExercisesController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def exercise_params
-      params.require(:exercise).permit( :name)
+      params.require(:exercise).permit(:name)
     end
 end

@@ -26,8 +26,8 @@ class LiftsController < ProtectedController
 
   # PATCH/PUT /lifts/1
   def update
-    if @lift.current_user.routines.lifts.find(:id).update(lift_params)
-      render json: @lift
+    if @lift.update(lift_params)
+      render json: @lift, status: :created
     else
       render json: @lift.errors, status: :unprocessable_entity
     end
@@ -41,11 +41,11 @@ class LiftsController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lift
-      @lift = Lift.find(params[:id])
+      @lift = current_user.lifts.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def lift_params
-      params.require(:lift).permit(:routine_id, :exercise_id, :weight, :user)
+      params.require(:lift).permit(:routine_id, :exercise_id, :weight)
     end
 end
